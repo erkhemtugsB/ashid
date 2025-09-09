@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Home, Building, Wrench, Hammer, PaintBucket, Zap } from "lucide-react";
 
@@ -142,6 +143,7 @@ const Services = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };

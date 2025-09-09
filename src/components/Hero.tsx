@@ -19,13 +19,13 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold text-primary-foreground leading-tight tracking-wide">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-primary-foreground leading-tight tracking-wide">
                 OUR WORK
                 <br />
                 <span className="text-accent">SHOWS</span>
               </h1>
               
-              <p className="text-xl lg:text-2xl text-primary-foreground/90 max-w-lg leading-relaxed">
+              <p className="text-lg sm:text-xl lg:text-2xl text-primary-foreground/90 max-w-lg leading-relaxed">
                 Over 30 years of experience improving everything we touch.
               </p>
             </div>
@@ -48,18 +48,18 @@ const Hero = () => {
             </div>
             
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-primary-foreground/20">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t border-primary-foreground/20">
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-accent">30+</div>
-                <div className="text-primary-foreground/80 text-sm tracking-wide">YEARS</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent">30+</div>
+                <div className="text-primary-foreground/80 text-xs sm:text-sm tracking-wide">YEARS</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-accent">500+</div>
-                <div className="text-primary-foreground/80 text-sm tracking-wide">PROJECTS</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent">500+</div>
+                <div className="text-primary-foreground/80 text-xs sm:text-sm tracking-wide">PROJECTS</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-accent">100%</div>
-                <div className="text-primary-foreground/80 text-sm tracking-wide">SATISFACTION</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent">100%</div>
+                <div className="text-primary-foreground/80 text-xs sm:text-sm tracking-wide">SATISFACTION</div>
               </div>
             </div>
           </div>

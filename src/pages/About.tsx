@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Users, Award, Clock, Shield } from "lucide-react";
 
@@ -99,6 +100,7 @@ const About = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };

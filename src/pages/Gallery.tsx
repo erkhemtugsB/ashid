@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -130,6 +131,7 @@ const Gallery = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };
