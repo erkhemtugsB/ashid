@@ -8,6 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Construction Company Theme */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -17,25 +18,34 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Blue - Deep Construction Blue */
+    --primary: 220 85% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Light Blue */
+    --secondary: 220 25% 85%;
+    --secondary-foreground: 220 85% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8.9% 46.1%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Construction Yellow/Lime */
+    --accent: 72 100% 70%;
+    --accent-foreground: 220 85% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 220 85% 35%;
 
+    /* Custom Construction Design Tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(220 85% 45%) 0%, hsl(220 85% 25%) 100%);
+    --hero-overlay: linear-gradient(135deg, hsl(220 85% 45% / 0.95) 0%, hsl(220 85% 25% / 0.98) 100%);
+    --accent-glow: 0 0 30px hsl(72 100% 70% / 0.3);
+    --section-bg: hsl(220 25% 98%);
+    
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;

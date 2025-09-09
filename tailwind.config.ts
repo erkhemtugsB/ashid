@@ -47,6 +47,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Construction-specific colors
+        'hero-gradient': 'var(--hero-gradient)',
+        'hero-overlay': 'var(--hero-overlay)',
+        'section-bg': 'var(--section-bg)',
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
