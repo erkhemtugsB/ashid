@@ -25,9 +25,9 @@ const Navigation = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">P</span>
+                <span className="text-accent-foreground font-bold text-lg">T</span>
               </div>
-              <span className="text-primary-foreground font-bold text-xl">POWER</span>
+              <span className="text-primary-foreground font-bold text-xl">Todashid</span>
             </Link>
           </div>
 

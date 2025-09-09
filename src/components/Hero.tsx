@@ -7,12 +7,12 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary via-primary to-primary/80 overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-        style={{ backgroundImage: `url(${heroImage})` }}
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+  style={{ backgroundImage: `url(https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg)` }}
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/35 via-primary/20 to-transparent" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -43,7 +43,7 @@ const Hero = () => {
                 size="lg"
                 className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold tracking-wide px-8 py-6 text-lg"
               >
-                GET FREE QUOTE
+                Call Us
               </Button>
             </div>
             
