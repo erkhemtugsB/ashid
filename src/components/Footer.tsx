@@ -13,17 +13,15 @@ const Footer = () => {
               <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
                 <span className="text-accent-foreground font-bold text-lg">P</span>
               </div>
-              <span className="font-bold text-xl">POWER</span>
+              <span className="font-bold text-xl">Todashid</span>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Building the future with over 30 years of construction excellence. 
-              Quality craftsmanship and customer satisfaction guaranteed.
-            </p>
+              TODASHID LLC is a specialized company in the construction sector, experienced in exterior finishing and facade works            </p>
             <div className="flex space-x-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-                <a 
+              {[Facebook, Instagram].map((Icon, index) => (
+                <a
                   key={index}
-                  href="#" 
+                  href="#"
                   className="w-8 h-8 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
                 >
                   <Icon size={16} />
@@ -44,7 +42,7 @@ const Footer = () => {
                 { name: "Contact", href: "/contact" }
               ].map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     to={link.href}
                     className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
                   >
@@ -61,7 +59,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {[
                 "Residential Construction",
-                "Commercial Building", 
+                "Commercial Building",
                 "Renovation & Remodeling",
                 "General Contracting",
                 "Emergency Repairs"
@@ -82,17 +80,17 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin size={16} className="text-accent mt-1 flex-shrink-0" />
                 <div className="text-primary-foreground/80 text-sm">
-                  123 Construction Ave<br />
-                  Building City, BC 12345
+                  7474 E Arkansas Ave, Apt 1603<br />
+                  Denver, CO 80231
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={16} className="text-accent flex-shrink-0" />
-                <span className="text-primary-foreground/80 text-sm">(555) 123-4567</span>
+                <span className="text-primary-foreground/80 text-sm">(720) 217-5641</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-accent flex-shrink-0" />
-                <span className="text-primary-foreground/80 text-sm">info@powerconstruction.com</span>
+                <span className="text-primary-foreground/80 text-sm">todexteriors@gmail.com</span>
               </div>
             </div>
           </div>
@@ -104,9 +102,9 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-primary-foreground/60 text-sm text-center md:text-left">
-              © 2024 Power Construction. All rights reserved.
+              © 2025 Todashid Construction. All rights reserved.
             </div>
-            <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
+            {/* <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
               <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors">
                 Privacy Policy
               </a>
@@ -116,7 +114,7 @@ const Footer = () => {
               <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors">
                 Cookie Policy
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

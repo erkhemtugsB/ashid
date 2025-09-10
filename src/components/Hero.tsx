@@ -26,7 +26,7 @@ const Hero = () => {
               </h1>
               
               <p className="text-lg sm:text-xl lg:text-2xl text-primary-foreground/90 max-w-lg leading-relaxed">
-                Over 30 years of experience improving everything we touch.
+                Over 10 years of experience improving everything we touch.
               </p>
             </div>
             
@@ -50,11 +50,11 @@ const Hero = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t border-primary-foreground/20">
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent">30+</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent">10+</div>
                 <div className="text-primary-foreground/80 text-xs sm:text-sm tracking-wide">YEARS</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent">500+</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-accent">100+</div>
                 <div className="text-primary-foreground/80 text-xs sm:text-sm tracking-wide">PROJECTS</div>
               </div>
               <div className="text-center">

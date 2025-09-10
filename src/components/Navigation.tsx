@@ -51,14 +51,14 @@ const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <Button 
               variant="default" 
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold tracking-wide"
             >
               GET A FREE QUOTE
             </Button>
-          </div>
+          </div> */}
 
           {/* Mobile menu button */}
           <div className="md:hidden">
