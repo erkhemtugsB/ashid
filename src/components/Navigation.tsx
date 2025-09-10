@@ -89,14 +89,14 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="px-3 py-2">
+              {/* <div className="px-3 py-2">
                 <Button 
                   variant="default" 
                   className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold tracking-wide"
                 >
                   GET A FREE QUOTE
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         )}
