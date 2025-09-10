@@ -8,7 +8,7 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
-        
+
         {/* About Section */}
         <section className="py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,18 +18,18 @@ const Index = () => {
                   BUILDING <span className="text-primary">DREAMS</span> SINCE 1995
                 </h2>
                 <p className="text-base sm:text-lg text-muted-foreground mb-4 lg:mb-6">
-                  With over 25 years of experience in the construction industry, we have built a reputation for delivering exceptional quality and innovative solutions. Our team of skilled professionals is committed to turning your vision into reality.
+                  TODASHID LLC is a specialized company in the construction sector, experienced in exterior finishing and facade works. We always prioritize customer satisfaction through quality products and professional execution.
+
                 </p>
                 <p className="text-base sm:text-lg text-muted-foreground mb-6 lg:mb-8">
-                  From residential homes to large commercial projects, we approach every job with the same dedication to excellence, safety, and customer satisfaction.
-                </p>
+                  Our team has many years of experience and strictly adheres to U.S. construction standards and EPA lead-safe regulations. We provide reliable and guaranteed services to residents, families, and businesses in Denver and its surrounding areas.                </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6">
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1 lg:mb-2">500+</div>
+                    <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1 lg:mb-2">100+</div>
                     <div className="text-sm sm:text-base text-muted-foreground">Projects Completed</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1 lg:mb-2">25+</div>
+                    <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1 lg:mb-2">10+</div>
                     <div className="text-sm sm:text-base text-muted-foreground">Years Experience</div>
                   </div>
                   <div className="text-center col-span-2 sm:col-span-1">
@@ -52,7 +52,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Services Preview Section */}
         <section className="py-20 bg-section-bg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,20 +64,20 @@ const Index = () => {
                 From residential homes to commercial buildings, we deliver quality construction services that stand the test of time.
               </p>
             </div>
-            
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {[
                 {
-                  title: "RESIDENTIAL",
-                  description: "Custom homes and renovations built to your exact specifications"
+                  title: "Window",
+                  description: "High-quality window installation and replacement for improved energy efficiency and aesthetics."
                 },
                 {
-                  title: "COMMERCIAL", 
-                  description: "Office buildings, retail spaces, and industrial facilities"
+                  title: "Gutter",
+                  description: "Professional gutter installation and maintenance to protect your property from water damage."
                 },
                 {
-                  title: "RENOVATION",
-                  description: "Transforming existing spaces with modern design and functionality"
+                  title: "Vinyl Siding",
+                  description: "Durable vinyl siding solutions to enhance your home's exterior and increase its value."
                 }
               ].map((service, index) => (
                 <div key={index} className="bg-card p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">

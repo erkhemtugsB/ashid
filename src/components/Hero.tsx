@@ -31,20 +31,23 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg"
-                className="bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 font-semibold tracking-wide px-8 py-6 text-lg"
-              >
-                EXPLORE SERVICES
-                <ArrowDown className="ml-2 h-5 w-5" />
-              </Button>
-              
-              <Button 
-                size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold tracking-wide px-8 py-6 text-lg"
-              >
-                Call Us
-              </Button>
+              <a href="/services">
+                <Button 
+                  size="lg"
+                  className="bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 font-semibold tracking-wide px-8 py-6 text-lg"
+                >
+                  EXPLORE SERVICES
+                  <ArrowDown className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
+              <a href="tel:7202175641">
+                <Button 
+                  size="lg"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold tracking-wide px-8 py-6 text-lg"
+                >
+                  Call Us
+                </Button>
+              </a>
             </div>
             
             {/* Stats */}
