@@ -42,10 +42,7 @@ const Index = () => {
                 <div className="relative">
                   <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg overflow-hidden">
                     <div className="w-full h-full bg-muted/50 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-4xl lg:text-6xl mb-2">🏗️</div>
-                        <p className="text-muted-foreground text-sm lg:text-base">Construction Excellence</p>
-                      </div>
+                      <img src="src/assets/about.png" alt="Construction" className="w-full h-full object-cover" />
                     </div>
                   </div>
                   <div className="absolute -top-4 -right-4 w-16 h-16 lg:w-20 lg:h-20 bg-accent rounded-full opacity-80"></div>
