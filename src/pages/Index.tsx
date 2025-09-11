@@ -15,7 +15,7 @@ const Index = () => {
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 lg:mb-6">
-                  BUILDING <span className="text-primary">DREAMS</span> SINCE 1995
+                  BUILDING <span className="text-primary">DREAMS</span> SINCE 2013
                 </h2>
                 <p className="text-base sm:text-lg text-muted-foreground mb-4 lg:mb-6">
                   TODASHID LLC is a specialized company in the construction sector, experienced in exterior finishing and facade works. We always prioritize customer satisfaction through quality products and professional execution.

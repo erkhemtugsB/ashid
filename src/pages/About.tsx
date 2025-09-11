@@ -13,10 +13,10 @@ const About = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-                ABOUT <span className="text-accent">POWER</span>
+                ABOUT <span className="text-accent">Todashid</span>
               </h1>
               <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-                Building the future, one project at a time. With over three decades of experience, 
+                Building the future, one project at a time. With over three decades of experience,
                 we've established ourselves as leaders in the construction industry.
               </p>
             </div>
@@ -33,23 +33,27 @@ const About = () => {
                 </h2>
                 <div className="space-y-6 text-lg text-muted-foreground">
                   <p>
-                    Founded in 1993, Power Construction began as a small family business with a simple mission: 
-                    to deliver exceptional construction services that exceed client expectations.
+                    TODASHID LLC is a specialized company
+                    in the construction sector, experienced in exterior
+                    finishing and facade works. We always prioritize customer
+                    satisfaction through quality products and professional execution.
                   </p>
                   <p>
-                    Over the years, we've grown from a local contractor to a regional leader, completing 
-                    hundreds of residential, commercial, and industrial projects. Our success is built on 
-                    a foundation of quality craftsmanship, integrity, and customer satisfaction.
+                    Our team has many years of experience and strictly 
+                    adheres to U.S. construction standards and EPA lead-safe 
+                    regulations. We provide reliable and guaranteed services to 
+                    residents, families, and businesses in Denver and its surrounding 
+                    areas.
                   </p>
                   <p>
-                    Today, we continue to push the boundaries of what's possible in construction, 
-                    embracing new technologies and sustainable practices while maintaining the 
+                    Today, we continue to push the boundaries of what's possible in construction,
+                    embracing new technologies and sustainable practices while maintaining the
                     traditional values that made us who we are.
                   </p>
                 </div>
-                <Button className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
+                {/* <Button className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
                   Learn More About Our Projects
-                </Button>
+                </Button> */}
               </div>
               <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-8 rounded-lg">
                 <div className="grid grid-cols-2 gap-8">
@@ -72,7 +76,7 @@ const About = () => {
         </section>
 
         {/* Team Section */}
-        <section className="py-20 bg-section-bg">
+        {/* <section className="py-20 bg-section-bg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
@@ -82,7 +86,7 @@ const About = () => {
                 The experienced professionals who make every project a success.
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 { name: "John Smith", role: "CEO & Founder", experience: "30+ years" },
@@ -98,7 +102,7 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer />
     </>

@@ -6,40 +6,28 @@ import { Home, Building, Wrench, Hammer, PaintBucket, Zap } from "lucide-react";
 const Services = () => {
   const services = [
     {
-      icon: Home,
-      title: "RESIDENTIAL CONSTRUCTION",
-      description: "Custom homes, additions, and residential renovations built to the highest standards.",
-      features: ["Custom Home Building", "Home Additions", "Kitchen & Bathroom Remodels", "Basement Finishing"]
-    },
-    {
-      icon: Building,
-      title: "COMMERCIAL CONSTRUCTION", 
-      description: "Office buildings, retail spaces, and commercial facilities designed for success.",
-      features: ["Office Buildings", "Retail Spaces", "Restaurants", "Warehouses"]
-    },
-    {
-      icon: Wrench,
-      title: "RENOVATION & REMODELING",
-      description: "Transform your existing space with modern design and improved functionality.",
-      features: ["Complete Renovations", "Interior Design", "Space Planning", "Historic Restoration"]
-    },
-    {
-      icon: Hammer,
-      title: "GENERAL CONTRACTING",
-      description: "Comprehensive project management from conception to completion.",
-      features: ["Project Management", "Permit Handling", "Subcontractor Coordination", "Quality Control"]
-    },
-    {
       icon: PaintBucket,
-      title: "FINISHING SERVICES",
-      description: "Professional finishing touches that make your project complete.",
-      features: ["Interior Painting", "Flooring Installation", "Tile Work", "Trim & Molding"]
+      title: "Soffit & Fascia",
+      description: "Installation and repair of decorative roof edge panels and fascia boards.",
+      features: ["Soffit Installation", "Fascia Installation", "Repairs & Maintenance", "Custom Solutions"]
     },
     {
       icon: Zap,
-      title: "SPECIALTY SERVICES",
-      description: "Specialized construction services for unique project requirements.",
-      features: ["Green Building", "Emergency Repairs", "Consulting", "Maintenance"]
+      title: "Gutter",
+      description: "Professional installation and replacement of rainwater drainage systems.",
+      features: ["Gutter Installation", "Gutter Replacement", "Gutter Cleaning", "Downspout Solutions"]
+    },
+    {
+      icon: Home,
+      title: "Window",
+      description: "Expert window installation and replacement services.",
+      features: ["Window Installation", "Window Replacement", "Energy Efficient Options", "Custom Sizes"]
+    },
+    {
+      icon: Building,
+      title: "Vinyl Siding (CraneBoard, Mastic)",
+      description: "High-quality, energy-efficient vinyl siding installation and repair.",
+      features: ["CraneBoard Siding", "Mastic Siding", "Insulated Siding", "Siding Repairs"]
     }
   ];
 
@@ -133,12 +121,11 @@ const Services = () => {
               Let's bring your vision to life together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 py-6">
-                GET FREE QUOTE
-              </Button>
-              <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold px-8 py-6">
-                SCHEDULE CONSULTATION
-              </Button>
+              <a href="/contact">
+                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 py-6">
+                  Contact Us
+                </Button>
+              </a>
             </div>
           </div>
         </section>

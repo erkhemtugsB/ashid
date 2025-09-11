@@ -58,11 +58,10 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">SERVICES</h3>
             <ul className="space-y-2">
               {[
-                "Residential Construction",
-                "Commercial Building",
-                "Renovation & Remodeling",
-                "General Contracting",
-                "Emergency Repairs"
+                "Soffit and Fascia Installation",
+                "Gutter Installation & Repair",
+                "Window Replacement",
+                "Vinyl siding (CraneBoard, Mastic)"
               ].map((service) => (
                 <li key={service}>
                   <span className="text-primary-foreground/80 text-sm">
