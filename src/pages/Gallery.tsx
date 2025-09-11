@@ -4,25 +4,19 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const Gallery = () => {
-  const [selectedCategory, setSelectedCategory] = useState("ALL");
-  
-  const categories = ["ALL", "RESIDENTIAL", "COMMERCIAL", "RENOVATION"];
-  
   const projects = [
-    { id: 1, title: "Modern Family Home", category: "RESIDENTIAL", image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=600&fit=crop" },
-    { id: 2, title: "Office Complex", category: "COMMERCIAL", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" },
-    { id: 3, title: "Kitchen Renovation", category: "RENOVATION", image: "https://images.unsplash.com/photo-1556912998-c57cc0f46c8c?w=800&h=600&fit=crop" },
-    { id: 4, title: "Luxury Villa", category: "RESIDENTIAL", image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop" },
-    { id: 5, title: "Retail Store", category: "COMMERCIAL", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" },
-    { id: 6, title: "Bathroom Remodel", category: "RENOVATION", image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&h=600&fit=crop" },
-    { id: 7, title: "Custom Home", category: "RESIDENTIAL", image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop" },
-    { id: 8, title: "Corporate Headquarters", category: "COMMERCIAL", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" },
-    { id: 9, title: "Historic Restoration", category: "RENOVATION", image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop" }
+    { id: 1, title: "", category: "", image: "/about.png" },
+    { id: 2, title: "", category: "", image: "/gallery1.png" },
+    { id: 3, title: "", category: "", image: "/gallery2.png" },
+    { id: 4, title: "", category: "", image: "/gallery9.png" },
+    { id: 5, title: "", category: "", image: "/gallery4.png" },
+    { id: 6, title: "", category: "", image: "/gallery5.png" },
+    { id: 7, title: "", category: "", image: "/gallery6.png" },
+    { id: 8, title: "", category: "", image: "/gallery7.png" },
+    { id: 9, title: "", category: "", image: "/gallery8.png" }
   ];
 
-  const filteredProjects = selectedCategory === "ALL" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  // No filtering, just show all projects
 
   return (
     <>
@@ -44,32 +38,13 @@ const Gallery = () => {
         </section>
 
         {/* Filter Section */}
-        <section className="py-12 bg-background border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-center gap-4">
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  className={
-                    selectedCategory === category
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  }
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </section>
+  {/* Filter Section removed for static gallery */}
 
         {/* Gallery Grid */}
         <section className="py-20 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project) => (
+              {projects.map((project) => (
                 <div key={project.id} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="aspect-[4/3] overflow-hidden">
                     <img 
@@ -101,10 +76,10 @@ const Gallery = () => {
             
             <div className="grid md:grid-cols-4 gap-8">
               {[
-                { number: "500+", label: "PROJECTS COMPLETED" },
-                { number: "30+", label: "YEARS EXPERIENCE" },
+                { number: "100+", label: "PROJECTS COMPLETED" },
+                { number: "10+", label: "YEARS EXPERIENCE" },
                 { number: "100%", label: "CLIENT SATISFACTION" },
-                { number: "50+", label: "AWARDS WON" }
+                { number: "5+", label: "AWARDS WON" }
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-5xl lg:text-6xl font-bold text-primary mb-4">{stat.number}</div>
@@ -125,9 +100,11 @@ const Gallery = () => {
               Let's discuss how we can bring your construction vision to life. 
               Contact us today for a free consultation and quote.
             </p>
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 py-6">
-              START YOUR PROJECT
-            </Button>
+            <a href="/contact">
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 py-6">
+                START YOUR PROJECT
+              </Button>
+            </a>
           </div>
         </section>
       </main>
