@@ -10,9 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">P</span>
-              </div>
+              <img src="/logo.png" alt="Todashid Logo" className="w-10 h-10 rounded-lg object-cover" />
               <span className="font-bold text-xl">Todashid</span>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
