@@ -31,15 +31,16 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/services">
-                <Button 
-                  size="lg"
-                  className="bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 font-semibold tracking-wide px-8 py-6 text-lg"
-                >
+              <Button 
+                asChild
+                size="lg"
+                className="bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 font-semibold tracking-wide px-8 py-6 text-lg"
+              >
+                <a href="/services">
                   EXPLORE SERVICES
                   <ArrowDown className="ml-2 h-5 w-5" />
-                </Button>
-              </a>
+                </a>
+              </Button>
               <a href="tel:7202175641">
                 <Button 
                   size="lg"
