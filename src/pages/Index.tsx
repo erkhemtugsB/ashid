@@ -65,7 +65,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-2 gap-6 lg:gap-8">
               {[
                 {
                   title: "Window",
@@ -78,6 +78,10 @@ const Index = () => {
                 {
                   title: "Vinyl Siding",
                   description: "Durable vinyl siding solutions to enhance your home's exterior and increase its value."
+                },
+                {
+                  title: "Soffit and Fascia",
+                  description: "Expert installation and repair of soffit and fascia to protect and beautify your roofline."
                 }
               ].map((service, index) => (
                 <div key={index} className="bg-card p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
@@ -85,8 +89,8 @@ const Index = () => {
                   <p className="text-muted-foreground text-sm lg:text-base">{service.description}</p>
                 </div>
               ))}
+              </div>
             </div>
-          </div>
         </section>
       </main>
       <Footer />

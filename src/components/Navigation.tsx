@@ -18,14 +18,16 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-primary/95 backdrop-blur-sm">
+  <nav className="fixed top-0 w-full z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <img src="/logo.png" alt="Todashid Logo" className="w-10 h-10 rounded-lg object-cover" />
-              <span className="text-primary-foreground font-bold text-xl">Todashid</span>
+              <div className="w-14 h-14 rounded-lg flex items-center justify-center bg-white">
+                <img src="/logo.png" alt="Todashid Logo" className="w-12 h-12 object-contain" />
+              </div>
+              <span className="font-bold text-xl text-blue-700">TOD Exteriors</span>
             </Link>
           </div>
 
@@ -38,8 +40,8 @@ const Navigation = () => {
                   to={item.href}
                   className={`px-3 py-2 text-sm font-medium tracking-wider transition-colors ${
                     isActive(item.href)
-                      ? "text-accent border-b-2 border-accent"
-                      : "text-primary-foreground hover:text-accent"
+                      ? "text-green-600 border-b-2 border-green-600"
+                      : "text-blue-700 hover:text-green-600"
                   }`}
                 >
                   {item.name}
@@ -62,7 +64,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-primary-foreground hover:text-accent p-2"
+              className="text-blue-700 hover:text-green-600 p-2"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -72,29 +74,21 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-primary/98">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   className={`block px-3 py-2 text-base font-medium tracking-wider transition-colors ${
                     isActive(item.href)
-                      ? "text-accent bg-primary/50"
-                      : "text-primary-foreground hover:text-accent hover:bg-primary/50"
+                      ? "text-green-600 bg-blue-100"
+                      : "text-blue-700 hover:text-green-600 hover:bg-blue-50"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              {/* <div className="px-3 py-2">
-                <Button 
-                  variant="default" 
-                  className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold tracking-wide"
-                >
-                  GET A FREE QUOTE
-                </Button>
-              </div> */}
             </div>
           </div>
         )}
