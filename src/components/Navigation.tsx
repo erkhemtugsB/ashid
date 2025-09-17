@@ -19,7 +19,7 @@ const Navigation = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full z-[100] bg-[#0a174e] text-white text-center font-bold leading-none h-8 flex items-center justify-center">
+  <div className="fixed top-0 left-0 w-full z-[100] bg-[#0a174e] text-white text-center font-bold leading-none h-8 flex items-center justify-center text-xs sm:text-base">
         Veterans Discount: All veterans receive 10% off! Thank you for your service.
       </div>
       <nav className="fixed top-8 w-full z-50 bg-white shadow-md">

@@ -93,6 +93,23 @@ const Index = () => {
             </div>
         </section>
       </main>
+      <div className="w-full flex justify-center gap-8 py-8 bg-transparent">
+        <img
+          src="https://i0.wp.com/www.wwcsinc.com/wp-content/uploads/2014/09/Licensed-Insured-Bonded-Badge.png?fit=302%2C278&ssl=1"
+          alt="Licensed Insured Bonded Badge"
+          className="h-32 w-auto object-contain"
+        />
+        <img
+          src="https://www.shutterstock.com/image-vector/licensed-insured-bonded-vector-icon-600nw-2229894243.jpg"
+          alt="Licensed Insured Bonded Icon"
+          className="h-32 w-auto object-contain"
+        />
+        <img
+          src="https://t3.ftcdn.net/jpg/05/48/39/48/360_F_548394803_09sckm5cDXW8LYxbtowCE2EltptKxDoV.jpg"
+          alt="Licensed Insured Bonded Badge 2"
+          className="h-32 w-auto object-contain"
+        />
+      </div>
       <Footer />
     </>
   );
