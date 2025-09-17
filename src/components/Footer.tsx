@@ -10,10 +10,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <span className="font-bold text-xl">Todashid</span>
+              <span className="font-bold text-xl">TOD Exteriors</span>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              TODASHID LLC is a specialized company in the construction sector, experienced in exterior finishing and facade works            </p>
+              TOD Exteriors LLC is a specialized company in the construction sector, experienced in exterior finishing and facade works            </p>
             <div className="flex space-x-4">
               {[Facebook, Instagram].map((Icon, index) => (
                 <a
@@ -98,7 +98,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-primary-foreground/60 text-sm text-center md:text-left">
-              © 2025 Todashid Construction. All rights reserved.
+              © 2025 TOD Exteriors LLC. All rights reserved.
             </div>
             {/* <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
               <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors">
