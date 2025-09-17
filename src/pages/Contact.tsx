@@ -136,7 +136,7 @@ const Contact = () => {
                   </div>
 
                   <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6">
-                    SEND MESSAGE
+                    GET QUOTE
                   </Button>
                 </form>
               </div>

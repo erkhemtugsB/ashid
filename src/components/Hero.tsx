@@ -1,8 +1,25 @@
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import emailjs from 'emailjs-com';
 import { ArrowDown } from "lucide-react";
 import heroImage from "@/assets/construction-hero.jpg";
 
 const Hero = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    emailjs.sendForm(
+      'service_5tyc3fo',
+      'template_wvsmsb2',
+      e.currentTarget,
+      'fgVFzSd2VinKlUcmw'
+    )
+    .then(() => {
+      alert('Message sent successfully!');
+    })
+    .catch(() => {
+      alert('Failed to send message.');
+    });
+  };
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary via-primary to-primary/80 overflow-hidden">
       {/* Background Image */}
@@ -16,7 +33,7 @@ const Hero = () => {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
+          {/* Left: Text & Stats */}
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-primary-foreground leading-tight tracking-wide">
@@ -24,33 +41,10 @@ const Hero = () => {
                 <br />
                 <span className="text-accent">SHOWS</span>
               </h1>
-              
               <p className="text-lg sm:text-xl lg:text-2xl text-primary-foreground/90 max-w-lg leading-relaxed">
                 Over 10 years of experience improving everything we touch.
               </p>
             </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                asChild
-                size="lg"
-                className="bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 font-semibold tracking-wide px-8 py-6 text-lg"
-              >
-                <a href="/services">
-                  EXPLORE SERVICES
-                  <ArrowDown className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
-              <a href="tel:7202175641">
-                <Button 
-                  size="lg"
-                  className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold tracking-wide px-8 py-6 text-lg"
-                >
-                  Call Us
-                </Button>
-              </a>
-            </div>
-            
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t border-primary-foreground/20">
               <div className="text-center">
@@ -67,8 +61,34 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          
-          {/* Right side - Construction worker silhouette will be handled by the background image */}
+          {/* Right: Contact Form */}
+          <div>
+            <form className="space-y-4 bg-white/80 rounded-lg p-6 shadow-lg" onSubmit={handleSubmit}>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-foreground mb-1">First Name *</label>
+                  <Input type="text" placeholder="John" name="first_name" required />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-foreground mb-1">Last Name *</label>
+                  <Input type="text" placeholder="Smith" name="last_name" required />
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-1">Email Address *</label>
+                <Input type="email" placeholder="john@example.com" name="email" required />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-1">Phone Number *</label>
+                <Input type="tel" placeholder="(555) 123-4567" name="phone" required />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-1">ZIP Code *</label>
+                <Input type="text" inputMode="numeric" pattern="[0-9]{5}" maxLength={5} placeholder="e.g. 80231" name="zip" required />
+              </div>
+              <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-4">SEND MESSAGE</Button>
+            </form>
+          </div>
         </div>
       </div>
       
