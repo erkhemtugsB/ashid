@@ -4,8 +4,25 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    emailjs.sendForm(
+      'service_5tyc3fo',
+      'template_wvsmsb2',
+      e.currentTarget,
+      'fgVFzSd2VinKlUcmw'
+    )
+    .then(() => {
+      alert('Message sent successfully!');
+    })
+    .catch(() => {
+      alert('Failed to send message.');
+    });
+  };
+
   return (
     <>
       <Navigation />
@@ -35,7 +52,7 @@ const Contact = () => {
                   GET A FREE <span className="text-primary">QUOTE</span>
                 </h2>
 
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-foreground mb-2">
@@ -45,6 +62,8 @@ const Contact = () => {
                         type="text"
                         placeholder="John"
                         className="border-border focus:border-primary"
+                        name="first_name"
+                        required
                       />
                     </div>
                     <div>
@@ -55,6 +74,8 @@ const Contact = () => {
                         type="text"
                         placeholder="Smith"
                         className="border-border focus:border-primary"
+                        name="last_name"
+                        required
                       />
                     </div>
                   </div>
@@ -67,6 +88,8 @@ const Contact = () => {
                       type="email"
                       placeholder="john@example.com"
                       className="border-border focus:border-primary"
+                      name="email"
+                      required
                     />
                   </div>
 
@@ -78,6 +101,8 @@ const Contact = () => {
                       type="tel"
                       placeholder="(555) 123-4567"
                       className="border-border focus:border-primary"
+                      name="phone"
+                      required
                     />
                   </div>
 
@@ -96,16 +121,21 @@ const Contact = () => {
 
                   <div>
                     <label className="block text-sm font-semibold text-foreground mb-2">
-                      Project Description *
+                      ZIP Code *
                     </label>
-                    <Textarea
-                      placeholder="Tell us about your project..."
-                      rows={6}
+                    <Input
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]{5}"
+                      maxLength={5}
+                      placeholder="e.g. 80231"
                       className="border-border focus:border-primary"
+                      name="zip"
+                      required
                     />
                   </div>
 
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6">
+                  <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6">
                     SEND MESSAGE
                   </Button>
                 </form>
