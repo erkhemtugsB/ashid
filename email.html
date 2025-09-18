@@ -1,78 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Contact Form Submission</title>
-    <style>
-      body {
-        background: #f6f8fa;
-        font-family: Arial, sans-serif;
-        color: #1e293b;
-        margin: 0;
-        padding: 0;
-      }
-      .container {
-        max-width: 600px;
-        margin: 2rem auto;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(30,41,59,0.08);
-        padding: 2rem;
-        border: 1px solid #e5e7eb;
-      }
-      .header {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-      .header h1 {
-        color: #2563eb;
-        font-size: 2rem;
-        margin: 0;
-      }
-      .header span {
-        color: #0ea5e9;
-        font-weight: bold;
-      }
-      .info {
-        margin-bottom: 1.5rem;
-      }
-      .label {
-        font-weight: bold;
-        color: #2563eb;
-        margin-bottom: 0.25rem;
-        display: block;
-      }
-      .value {
-        color: #1e293b;
-        margin-bottom: 1rem;
-        display: block;
-      }
-      .footer {
-        text-align: center;
-        color: #64748b;
-        font-size: 0.9rem;
-        margin-top: 2rem;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <h1>Contact <span>Submission</span></h1>
-      </div>
-      <div class="info">
-        <span class="label">Name:</span>
-        <span class="value">{{firstName}} {{lastName}}</span>
-        <span class="label">Email:</span>
-        <span class="value">{{email}}</span>
-        <span class="label">Phone:</span>
-        <span class="value">{{phone}}</span>
-        <span class="label">ZIP Code:</span>
-        <span class="value">{{zip}}</span>
-      </div>
-      <div class="footer">
-        &copy; 2025 TOD Exteriors LLC. All rights reserved.
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Form Submission</title>
+  <style>
+    body {
+      background: #f6f8fa;
+      font-family: Arial, sans-serif;
+      color: #1e293b;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(30, 41, 59, 0.08);
+      padding: 2rem;
+      border: 1px solid #e5e7eb;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .header h1 {
+      color: #2563eb;
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .header span {
+      color: #0ea5e9;
+      font-weight: bold;
+    }
+
+    .info {
+      margin-bottom: 1.5rem;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .value {
+      color: #1e293b;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .footer {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Contact <span>Submission</span></h1>
     </div>
-  </body>
+    <div class="info">
+      <span class="label">ZIP Code:</span>
+      <span class="value">{{zip}}</span>
+      <span class="label">Material Interested In:</span>
+      <span class="value">{{material}}</span>
+      <span class="label">Ownership:</span>
+      <span class="value">{{ownership}}</span>
+      <span class="label">Timeline:</span>
+      <span class="value">{{timeline}}</span>
+      <span class="label">Name:</span>
+      <span class="value">{{name}}</span>
+      <span class="label">Address:</span>
+      <span class="value">{{address}}</span>
+      <span class="label">Email:</span>
+      <span class="value">{{email}}</span>
+      <span class="label">Phone:</span>
+      <span class="value">{{phone}}</span>
+    </div>
+    <div class="footer">
+      &copy; 2025 TOD Exteriors LLC. All rights reserved.
+    </div>
+  </div>
+</body>
+
 </html>

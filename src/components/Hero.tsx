@@ -6,11 +6,65 @@ import { ArrowDown } from "lucide-react";
 import heroImage from "@/assets/construction-hero.jpg";
 
 const formSteps = [
-  { label: "First Name *", name: "first_name", type: "text", placeholder: "John", required: true },
-  { label: "Last Name *", name: "last_name", type: "text", placeholder: "Smith", required: true },
-  { label: "Email Address *", name: "email", type: "email", placeholder: "john@example.com", required: true },
-  { label: "Phone Number *", name: "phone", type: "tel", placeholder: "(555) 123-4567", required: true },
-  { label: "ZIP Code *", name: "zip", type: "text", placeholder: "e.g. 80231", required: true, inputMode: "numeric" as const, pattern: "[0-9]{5}", maxLength: 5 },
+  {
+    label: "Free Cost Estimate\nZIP Code *",
+    name: "zip",
+    type: "text",
+    placeholder: "e.g. 80231",
+    required: true,
+    inputMode: "numeric" as const,
+    pattern: "[0-9]{5}",
+    maxLength: 5
+  },
+  {
+    label: "Free Cost Estimate\nWhat type of service are you interested in for your project?",
+    name: "service",
+    type: "select",
+    options: ["Soffit & Fascia", "Gutter", "Window", "Vinyl Siding (CraneBoard, Mastic)"],
+    required: true
+  },
+  {
+    label: "Free Cost Estimate\nDo you own or rent your home?",
+    name: "ownership",
+    type: "select",
+    options: ["Own", "Rent"],
+    required: true
+  },
+  {
+    label: "Free Cost Estimate\nWhen do you need this work done?",
+    name: "timeline",
+    type: "select",
+    options: ["Urgent", "Less than 2 weeks", "More than 2 weeks", "Not sure/still planning"],
+    required: true
+  },
+  {
+    label: "Free Cost Estimate\nName *",
+    name: "name",
+    type: "text",
+    placeholder: "John Smith",
+    required: true
+  },
+  {
+    label: "Free Cost Estimate\nAddress *",
+    name: "address",
+    type: "text",
+    placeholder: "123 Main St, Denver, CO",
+    required: true
+  },
+  {
+    label: "Free Cost Estimate\nEmail *",
+    name: "email",
+    type: "email",
+    placeholder: "john@example.com",
+    required: true
+  },
+  {
+    label: "Free Cost Estimate\nPhone Number *",
+    name: "phone",
+    type: "tel",
+    placeholder: "(555) 123-4567",
+    required: true
+  }
 ];
 
 const Hero = () => {
@@ -19,6 +73,15 @@ const Hero = () => {
   const [submitted, setSubmitted] = React.useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [formSteps[step].name]: e.target.value });
+  };
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setFormData({ ...formData, [formSteps[step].name]: e.target.value });
+  };
+
+  // Use for radio buttons as well
+  const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [formSteps[step].name]: e.target.value });
   };
 
@@ -84,20 +147,39 @@ const Hero = () => {
             <div className="bg-white/80 rounded-lg p-6 shadow-lg">
               {!submitted ? (
                 <form onSubmit={handleContinue} className="space-y-4">
-                  <label className="block text-sm font-semibold text-foreground mb-1">
+                  <label className="block text-2xl font-bold text-primary mb-4 whitespace-pre-line">
                     {formSteps[step].label}
                   </label>
-                  <Input
-                    type={formSteps[step].type}
-                    name={formSteps[step].name}
-                    placeholder={formSteps[step].placeholder}
-                    value={formData[formSteps[step].name] || ""}
-                    required={formSteps[step].required}
-                    inputMode={formSteps[step].inputMode}
-                    pattern={formSteps[step].pattern}
-                    maxLength={formSteps[step].maxLength}
-                    onChange={handleChange}
-                  />
+                  {formSteps[step].type === "select" ? (
+                    <div className="space-y-2">
+                      {formSteps[step].options.map((opt: string) => (
+                        <label key={opt} className="flex items-center space-x-3 cursor-pointer">
+                          <input
+                            type="radio"
+                            name={formSteps[step].name}
+                            value={opt}
+                            checked={formData[formSteps[step].name] === opt}
+                            onChange={handleRadioChange}
+                            required={formSteps[step].required}
+                            className="appearance-none w-7 h-7 border-2 border-primary rounded-md checked:bg-primary checked:border-primary checked:ring-2 checked:ring-primary transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-primary"
+                          />
+                          <span className="text-lg text-foreground font-medium">{opt}</span>
+                        </label>
+                      ))}
+                    </div>
+                  ) : (
+                    <Input
+                      type={formSteps[step].type}
+                      name={formSteps[step].name}
+                      placeholder={formSteps[step].placeholder}
+                      value={formData[formSteps[step].name] || ""}
+                      required={formSteps[step].required}
+                      inputMode={formSteps[step].inputMode}
+                      pattern={formSteps[step].pattern}
+                      maxLength={formSteps[step].maxLength}
+                      onChange={handleChange}
+                    />
+                  )}
                   <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-4">
                     {step < formSteps.length - 1 ? "Continue" : "Get Quote"}
                   </Button>
