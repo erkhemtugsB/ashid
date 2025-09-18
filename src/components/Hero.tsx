@@ -1,24 +1,42 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import React from "react";
 import emailjs from 'emailjs-com';
 import { ArrowDown } from "lucide-react";
 import heroImage from "@/assets/construction-hero.jpg";
 
+const formSteps = [
+  { label: "First Name *", name: "first_name", type: "text", placeholder: "John", required: true },
+  { label: "Last Name *", name: "last_name", type: "text", placeholder: "Smith", required: true },
+  { label: "Email Address *", name: "email", type: "email", placeholder: "john@example.com", required: true },
+  { label: "Phone Number *", name: "phone", type: "tel", placeholder: "(555) 123-4567", required: true },
+  { label: "ZIP Code *", name: "zip", type: "text", placeholder: "e.g. 80231", required: true, inputMode: "numeric" as const, pattern: "[0-9]{5}", maxLength: 5 },
+];
+
 const Hero = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [step, setStep] = React.useState(0);
+  const [formData, setFormData] = React.useState({});
+  const [submitted, setSubmitted] = React.useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [formSteps[step].name]: e.target.value });
+  };
+
+  const handleContinue = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    emailjs.sendForm(
-      'service_5tyc3fo',
-      'template_wvsmsb2',
-      e.currentTarget,
-      'fgVFzSd2VinKlUcmw'
-    )
-    .then(() => {
-      alert('Message sent successfully!');
-    })
-    .catch(() => {
-      alert('Failed to send message.');
-    });
+    if (step < formSteps.length - 1) {
+      setStep(step + 1);
+    } else {
+      // Final submit
+      setSubmitted(true);
+      // Optionally send emailjs here
+      emailjs.send(
+        'service_5tyc3fo',
+        'template_wvsmsb2',
+        formData,
+        'fgVFzSd2VinKlUcmw'
+      );
+    }
   };
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary via-primary to-primary/80 overflow-hidden">
@@ -63,31 +81,34 @@ const Hero = () => {
           </div>
           {/* Right: Contact Form */}
           <div>
-            <form className="space-y-4 bg-white/80 rounded-lg p-6 shadow-lg" onSubmit={handleSubmit}>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-semibold text-foreground mb-1">First Name *</label>
-                  <Input type="text" placeholder="John" name="first_name" required />
+            <div className="bg-white/80 rounded-lg p-6 shadow-lg">
+              {!submitted ? (
+                <form onSubmit={handleContinue} className="space-y-4">
+                  <label className="block text-sm font-semibold text-foreground mb-1">
+                    {formSteps[step].label}
+                  </label>
+                  <Input
+                    type={formSteps[step].type}
+                    name={formSteps[step].name}
+                    placeholder={formSteps[step].placeholder}
+                    value={formData[formSteps[step].name] || ""}
+                    required={formSteps[step].required}
+                    inputMode={formSteps[step].inputMode}
+                    pattern={formSteps[step].pattern}
+                    maxLength={formSteps[step].maxLength}
+                    onChange={handleChange}
+                  />
+                  <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-4">
+                    {step < formSteps.length - 1 ? "Continue" : "Get Quote"}
+                  </Button>
+                </form>
+              ) : (
+                <div className="text-center py-12">
+                  <h2 className="text-2xl font-bold text-primary mb-4">We will reach out back ASAP!</h2>
+                  <p className="text-muted-foreground">Thank you for your interest. Our team will contact you soon.</p>
                 </div>
-                <div>
-                  <label className="block text-sm font-semibold text-foreground mb-1">Last Name *</label>
-                  <Input type="text" placeholder="Smith" name="last_name" required />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-foreground mb-1">Email Address *</label>
-                <Input type="email" placeholder="john@example.com" name="email" required />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-foreground mb-1">Phone Number *</label>
-                <Input type="tel" placeholder="(555) 123-4567" name="phone" required />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-foreground mb-1">ZIP Code *</label>
-                <Input type="text" inputMode="numeric" pattern="[0-9]{5}" maxLength={5} placeholder="e.g. 80231" name="zip" required />
-              </div>
-              <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-4">SEND MESSAGE</Button>
-            </form>
+              )}
+            </div>
           </div>
         </div>
       </div>
