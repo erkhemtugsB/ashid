@@ -147,9 +147,19 @@ const Hero = () => {
             <div className="bg-white/80 rounded-lg p-6 shadow-lg">
               {!submitted ? (
                 <form onSubmit={handleContinue} className="space-y-4">
-                  <label className="block text-2xl font-bold text-primary mb-4 whitespace-pre-line">
-                    {formSteps[step].label}
-                  </label>
+                  <div className="mb-4">
+                    <div className="text-3xl font-extrabold text-primary mb-2">Free Cost Estimate</div>
+                    <div className="text-base font-semibold text-foreground">
+                      {(() => {
+                        if (formSteps[step].name === "zip") {
+                          return "Enter zip code";
+                        }
+                        // For all other steps, show the question part (after the first line)
+                        const label = formSteps[step].label.split("\n")[1];
+                        return label || "";
+                      })()}
+                    </div>
+                  </div>
                   {formSteps[step].type === "select" ? (
                     <div className="space-y-2">
                       {formSteps[step].options.map((opt: string) => (
